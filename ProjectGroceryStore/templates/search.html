@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+    
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>rate</th>
+                <th>Unit</th>
+                <th>Manufacture Date</th>
+                <th>ExpiryDate</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for pro in results %}
+            <tr>
+                <td>{{ pro.name }}</td>
+                <td style="width:50px;">{{ pro.description }}</td>
+                <td style="width:50px;">{{ pro.rate }}</td>
+                <td style="width:50px;">{{ pro.Unit }}</td>
+                <td style="width:100px;">{{ pro.manufacture_date }}</td>
+                <td style="width:100px;">{{ pro.expiry_date }}</td>
+                <td><img src="/static/{{pro.id}}.jpeg" alt="No image" height="150px" width="150px"></td>
+                <td><form action="/search" method="POST">
+                  <label for="number"></label>
+                  <input type="hidden" name="product_id" value="{{ pro.id }}">
+                  <input type="hidden" name="user_id" value="{{ user_id }}">
+                  <input type="number" name="quantity" id="quantity" min="1" style="width: 75px;" required>
+                  <input type="submit" name="submit" id="submit" value="AddToCart">
+                  <input type="submit" name ="submit" id="submit" value="BuyNow">
+                  </form></td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <a href="/secondarypage1/{{user_id}}"><button type="button" class="btn btn-success">Go Back</button></a>
+    
+</body>
+</html>

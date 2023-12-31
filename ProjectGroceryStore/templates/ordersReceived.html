@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <title>Active Orders</title>
+</head>
+<body>
+    <h1>Active Orders</h1>
+    <table class="table table-striped table-hover">
+    
+        <tr>
+            <th>User Name</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Cost</th>
+            <th>Action</th>
+        </tr>
+        {% for (w,x,y,z,p,q) in List  %}
+        <tr>
+            <td>{{ w }}</td>
+            <td>{{ x }}</trd>
+            <td>{{ y }}</td>
+            <td>{{ z }}</td>
+            <td>{{ p }}</td>
+            <td><a href="/orderdelivered/{{q}}"><button class="btn btn-primary me-md-2" type="button" onclick="return confirm('Are you confirm that order is Delivered?');">Click here if Order Deleiverd </button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</body><a href="/displaysection/{{admin_id}}"><button type="button" class="btn btn-success">Go Back</button></a>
+</html>

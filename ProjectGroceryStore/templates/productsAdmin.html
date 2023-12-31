@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+
+    
+</head>
+<body>
+    <h1>Products In This Section</h1>
+    <!-- <div>
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>rate</th>
+                <th>manufacture_date</th>
+                <th>expiry_date</th>
+                <th>Quantity</th>
+                <th></th>
+                <th>Actions</th>
+            </tr>
+            {% for pro in Products %}
+            <tr>
+                <td>{{ pro.name }}</a></td>
+                <td>{{ pro.description }}</td>
+                <td>{{ pro.rate }}</td>
+                <td>{{ pro.manufacture_date }}</td>
+                <td>{{ pro.expiry_date }}</td>
+                <td>{{ pro.Quantity }}</td>
+                <td><img src="/static/{{pro.id}}.jpeg" alt="No Image Uploaded" height="150px" width="175px"></td>
+                <td><a href="/deleteProduct/{{ pro.id }}"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?');">Delete</button></a>        <a href="/updateProduct/{{ pro.id }}"><button class="btn btn-primary me-md-2" type="button">update</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </div> -->
+    
+    <div>
+        <h3><a href="/addProduct/{{admin_id}}/{{section_id}}"><button type="button" class="btn btn-success">Add a new product</button></a></h1>
+            <h3><a href="/displaysection/{{admin_id}}"><button type="button" class="btn btn-success">Go to Section</button></a></h1>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>Carts Placed</title>
+</head>
+<body>
+{% if list %}
+<h3><caption>Carts</caption></h3>
+<table class="table table-striped table-hover">
+    
+    <tr>
+        <th>product Name</th>
+        <th>rate</th>
+        <th>Quantity</th>
+        <th>Cost</th>
+        <th>Action</th>
+    </tr>
+    {% for (w,x,y,z,a) in list  %}
+    <tr>
+        <td>{{ w }}</td>
+        <td>{{ x }}</td>
+        <td>{{ y }}</td>
+        <td>{{ z }}</td>
+        <td><a href="/remove_cart/{{a}}"><button type="button" class="btn btn-danger" onclick="return confirm('This item will be removed from your cart');">Remove</button></a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <th>Total</th>
+        <th>{{total_cost}}</th>
+    </tr>
+</table>
+
+<a href="/confirm_order/{{user_id}}"><button class="btn btn-success">Check Out</button></a>
+{% else %}
+<h3>Nothing is Added to Cart</h3>
+{% endif %}
+<a href="/secondarypage1/{{user_id}}"><button class="btn btn-success">Goback</button></a>
+</body> 
+</html>

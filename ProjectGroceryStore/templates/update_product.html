@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>updateProduct</title>
+</head>
+<body>
+    <form  method="POST" action="#" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Product_Name</label>
+            <input type="text" name="name" id="name" value="{{ product.name }}">
+        </div>
+      
+        <div class="form-group">
+            <label for="description">Product_Description</label>
+            <input type="text" name="description" id="description" value="{{ product.description }}">  
+        </div>
+            <div class="form-group">
+                <label for="man_Date">Manufacture Date</label>
+                <input type="text" name="man_Date" id="man_Date" value="{{ product.manufacture_date }}" disabled>
+            </div>
+        <div class="form-group">
+            <label for="expiry_date">Expiry_date</label>
+            <input type="text" name="expiry_date" id="expiry_date" value="{{ product.expiry_date }}" disabled>
+        </div>
+        
+        <div class="form-group">
+            <label for="rate">Rate</label>
+            <input type="number" name="rate" id="rate" value="{{ product.rate }}">
+        </div>
+        <div class="form-group">
+            <label for="unit">unit</label>
+            <input type="text" name="unit" id="unit" value="{{ product.Unit }}">
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" name="quantity" id="quantity" value="{{ product.Quantity }}">
+        </div>
+        <div class="form-group">
+            <label for="image">Upload Image:</label>
+            <input type="file" name="image" id="image" accept="image/jpeg">
+        </div>
+        <div class="form-group">
+            <input type="submit" name="Submit">
+        </div>
+    </form>
+</body>
+</html>

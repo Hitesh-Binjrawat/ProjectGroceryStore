@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <title>SectionDetails</title>
+</head>
+<body>
+    <div>
+    <h1>
+        
+        <span>
+            Section made by You
+            <a href="/"><button class='btn btn-success pull-right' onclick="return confirm('Are You sure to logout');">Logout</button></a>
+              
+            </button>
+        </span>
+    </h1>
+    </div>
+    <div>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Section Name</th>
+            <th>Products</th>
+            <th  text-align="center">Actions</th>
+            
+        </tr>
+        {% for i in Section %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td><a href="/displayProduct/{{i.id}}/{{i.admin_id}}"><button class="btn btn-primary me-md-2" type="button">click Here For Products</button></a></td>
+            <td><a href="/deletesection/{{i.id}}/{{i.admin_id}}"><button type="button" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this section, products for this section will also be deleted?');">Delete</button></a></td>
+            <td><a href="/updatesection/{{i.id}}/{{i.admin_id}}"><button type="button" class="btn btn-danger">Update</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <div>
+    <h3><a href="/createsection/{{Section[0].admin_id}}"><button type="button" class="btn btn-success">Click Here To add New Section</button></a></h3>
+    </div>
+</div>
+</body>
